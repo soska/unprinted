@@ -1,0 +1,40 @@
+@import "reset";
+@import "variables";
+@import "type";
+@import "mixins";
+
+// Configuration
+// ----------------------------------------
+$width  : $landscape_width; // default width;
+$height : $landscape_height; // default height;
+
+html, body, #wrapper{
+  @extend %maximize;
+}
+
+body{
+  background:#e0e0e0;
+}
+
+.article-container{
+  @extend %maximize;
+  width:$width;
+  margin:0 auto;
+  background:#fff;
+  @include momentum-scrolling;
+}
+
+@import "spread";
+
+.main-column{  
+  $main_col_width : $width / 2;  
+  width:$main_col_width;
+  margin:0 $main_col_width / 2;
+  color:$text_color;
+  @include respond-to(handhelds) { width: 100% ;}
+  
+  .spread{
+    left:-$width/4; // make spreads work inside main columns.
+  }
+  
+}

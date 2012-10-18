@@ -1,0 +1,17 @@
+{
+  "name": "unprinted",
+  "version": "1.0.0",
+  "description": "Magazine CSS Framework",
+  "homepage": "http://unprinted.onswipe.com",
+  "author": "Armando Sosa",
+  "dependencies": {
+    "request": ">=2.9.100",
+    "grunt-sass": "~0.2.1",
+    "grunt-contrib": "~0.2.0",
+    "grunt-contrib-lib": "~0.3.0",
+    "grunt-contrib-sass": "~0.1.3"
+  },
+  "engines": {
+    "node": ">= 0.6.0"
+  }
+}

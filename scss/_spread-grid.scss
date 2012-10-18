@@ -1,0 +1,70 @@
+$grid_columns:16;
+$grid_rows:12;
+$mwidth:floor($width / $grid_columns);
+$mheight:floor($height / $grid_rows);
+
+
+.inner-grid{
+  position:absolute;
+  left:50%;
+  top:50%;
+  @extend %fullsize;
+
+
+  .module{
+    position:absolute;
+    left:0;
+    top:0;
+    width:$mwidth;
+    height:$mheight;
+    overflow:hidden;
+    background:#ade;
+  }
+
+  //  ** Position classes **
+  // Positions are defined from the center of the page.
+  // ----------------------------------------
+  //  up-x and down-x are relative to the y axis
+  // ----------------------------------------
+  
+  @for $i from 1 through $grid_columns / 2 {
+    .up-#{$i}{
+      top:-$mwidth * $i;
+    }
+    .down-#{$i}{
+      top:$mwidth * $i;
+    }
+  }
+  
+  // ----------------------------------------
+  //  left-x and right-x are relative to the y axis
+  // ----------------------------------------
+  @for $i from 1 through $grid_rows / 2 {
+    .left-#{$i}{
+      left:-$mheight * $i;
+    }
+    .right-#{$i}{
+      left:$mheight * $i;
+    }
+  }
+  
+  //  ** Dimension classes **
+  // Dimensions are defined in coumns and rows
+  // ----------------------------------------
+  // Columns
+  // ----------------------------------------
+  @for $i from 1 through $grid_columns{
+    .columns-#{$i}{
+      width:$mwidth * $i;
+    }
+  }
+  // Rows
+  // ----------------------------------------
+  @for $i from 1 through $grid_rows{
+    .rows-#{$i}{
+      height:$mheight * $i;
+    }
+  }
+  
+  
+}

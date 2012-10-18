@@ -1,0 +1,25 @@
+%maximize{
+	height:100%;
+	overflow:auto;
+}
+
+%fullsize{
+	width:100%;
+	height:100%;
+}
+
+@mixin momentum-scrolling{
+  -webkit-overflow-scrolling: touch;
+}
+
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: 320px) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: 321px) and (max-width: 1024px) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: 1024px) { @content; }
+  }
+}

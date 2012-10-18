@@ -1,0 +1,92 @@
+.spread{
+  position:relative;
+  margin:2em 0;
+  width:$width;
+  background:#f9f9f9;
+  overflow:hidden;
+  
+  &.half-height{
+    height:$height/2;
+  }
+  
+  &.full-height{
+    height:$height;
+  }
+    
+  &.cover{
+    @extend .full-height;
+    margin-top:0;
+    
+    .cover-line{
+      z-index:1000;
+      position:absolute;
+      top:75%;
+      width:100%;
+      text-align:center;
+      
+      h1{
+        font-size:80px;
+        line-height:1em;
+        display:block;
+        margin-bottom:0;
+        line-height:1em;
+        font-weight:100;
+        text-transform:uppercase;
+        letter-spacing:.12em;   
+      }      
+      
+      h2{
+        font-size:48px;
+        font-weight:200;
+        display:block;
+        line-height:1em;
+        font-family:$serif;
+        font-style:italic;
+        letter-spacing:.1em;
+      }
+      
+      
+    }
+  }
+        
+  figure.full{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+  }
+  
+  blockquote{
+    z-index:1000;
+    font-size:24px;
+    line-height:27px;
+    letter-spacing:.1em;
+    margin:0;
+    color:#000;
+    
+    &:before{
+      content:"";
+    }
+  }
+  
+  .span-x{
+    padding:1em;
+    position:relative;
+    z-index:200;
+  }
+  
+  @for $i from 1 through 8 {
+    .span-#{$i} { 
+      @extend .span-x;
+      width: $width / 8 * $i; 
+    }
+    .push-#{$i} { 
+      margin-left: $width / 8 * $i; 
+    }
+  }  
+  
+  @import "spread-grid";
+  
+  
+}
